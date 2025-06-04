@@ -1,0 +1,449 @@
+@charset "UTF-8";
+
+/* CSS Document */
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('Roboto-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'Roboto-bold';
+	src: url('Roboto-Bold.ttf');
+}
+
+:root {
+	--body-font-size: 14px;
+	--body-line-height: 20px;
+	--standard-padding: 10px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	 -webkit-user-select: none; 
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+	font-family: "roboto";
+	color: black;
+	font-size: var(--body-font-size);
+	line-height: var(--body-line-height);
+	text-align: left;
+	word-spacing: 0;
+	background: white;
+}
+
+
+/*-----------------------Standard Text Definition------------------------*/
+
+p {
+	margin: 0px;
+	padding: 0px 12.5px var(--standard-padding) 12.5px;
+}
+
+/*-----------------------Headline Definition - 4 Level (Note: Display: none! Exception Level 4 clarify behavior with Editor)------------------------*/
+
+p.h1:first-child {
+	margin-top: 0px;
+}
+
+p.h1 {
+	color: #08338f;
+	font-family: 'roboto-bold';
+	 /* display: none;  */
+}
+
+p.h2 {
+	color: #298A08;
+	font-family: 'roboto-bold';
+	 /* display: none;  */
+}
+
+p.h3 {
+	color: #FF8000;
+	font-family: 'roboto-bold';
+	 /* display: none;  */
+}
+
+p.h4 {
+	color: #585858;
+	font-family: 'roboto-bold';
+	 /* display: none;  */
+}
+
+
+/* Give margins between hidden elements and any other element*/
+
+p.h1+* {
+	margin-top: var(--standard-padding) !important;
+}
+
+p.h2+* {
+	margin-top: var(--standard-padding) !important;
+}
+
+p.h3+* {
+	margin-top: var(--standard-padding) !important;
+}
+
+p.h4+* {
+	margin-top: var(--standard-padding) !important;
+}
+
+/* To give margins between hidden element & images */
+p.h1+div.legend , p.h2+div.legend, p.h3+div.legend, p.h4+div.legend {
+	margin-top: var(--standard-padding) !important;
+}
+
+
+/* remove top margins to avoid double margins between elements */
+
+p+table {
+	margin-top: 0px !important;
+}
+
+p+div {
+	margin-top: 0px !important;
+}
+
+p+div.legend {
+	margin-top: 0px !important;
+}
+
+.header1+div.ref {
+	margin-top: var(--standard-padding) !important;
+}
+
+.header2+div.ref {
+	margin-top: var(--standard-padding) !important;
+}
+
+.header3+div.ref {
+	margin-top: var(--standard-padding) !important;
+}
+
+.header4+div.ref {
+	margin-top: var(--standard-padding) !important;
+}
+
+
+p.list:before {
+	content: "";
+	margin-right: 0.8em;
+}
+
+p.list {
+	margin: 0px;
+	text-indent: -1.999em;
+	margin-left: 1.6em;
+	margin-bottom: 0.40em;
+	margin-top: 0.05em;
+}
+
+/*-----------------------Enumeration with Bullet Points - First Level------------------------*/
+
+p.list1:before
+						{ 
+						 
+						margin-right:0.5em;
+						 
+						}
+p.list1
+						{ 
+						margin: 0px;     
+						text-indent:-1em;             
+						margin-left:3.4em;
+						
+						}
+
+p.listlevel1:before {
+							content: "\2022";
+							/*"\2022";*/
+							padding-right: 6px;
+						}
+						
+p.listlevel1 {
+							text-indent: -11px;
+							padding-left: 38px;
+						}
+
+li.enum1 {
+	margin: 0px 12.5px 0px 36px;
+	text-align: left;
+	padding-bottom: 5px;
+}
+						
+
+						
+
+
+/*-----------------------Enumeration with Hyphen - Third Level------------------------*/						
+
+p.listlevel3:before  
+						{
+						content: "\25E6";  
+						margin-right:0.4em;
+						}
+
+p.listlevel3        
+						{
+						margin: 0px;					
+				     	text-indent:-1.1em;             
+				       	margin-left:3.7em;
+						
+						}
+	
+/*-----------------------Numbered List, first and second Level Note: also latin, small/big letters ------------------------*/
+
+ol						{ 
+						margin: 5px 0px 5px 0px;
+						} 
+
+
+						
+/*-----------------------Standard Source Code with div box------------------------*/
+
+p.reference,
+p.footnote {
+	font-size: calc(var(--body-font-size) * 0.92);
+	padding: 5px 5px 5px 5px !important;
+	line-height: calc(var(--body-line-height) * 0.9);
+}
+
+p.footnote {
+	font-style: italic;
+}
+
+div.ref,
+div.footn,
+div.hyp-comment {
+	background: #E6E8FA;
+	/*or #f5f5f5 very light bg*/
+	border: 1px solid #FFF;
+	/*#D9D9F3*/
+	padding: 2px 2px 0px 2px;
+	margin: var(--standard-padding) 10px var(--standard-padding) 10px;
+	border-radius: 1px;
+	-moz-border-radius: 1px;
+	-webkit-border-radius: 1px;
+	box-shadow: 1px 2px 4px rgba(0, 0, 0, .4);
+}
+
+div.hyp-comment {
+	box-shadow: 1px 2px 4px rgba(0, 0, 0, .4);
+	background: -moz-linear-gradient(bottom, #ED6BA6, #ffffff);
+	/* Firefox */
+	background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ED6BA6));
+	/* Chrome, Safari */
+	filter: progid:DXImageTransform.Microsoft.gradient(start Colorstr='#ffffff', endColorstr='#ED6BA6');
+	/* Internet Explorer */
+}
+
+/*----------Standard Image Declaration with div container - use div container for Images and Algorithm-----------*/
+
+div.legend {
+	margin: var(--standard-padding) 10px var(--standard-padding) 10px !important;
+}
+
+img {
+    width: 100%;
+}
+
+/*-------------------------------Images------------------------------------*/
+
+@media screen and (max-height: 568px) {
+    Div.imge img {
+        max-width: 310px;
+    }
+}
+
+@media screen and (max-height: 310px) {
+    Div.img img {
+        max-width: 555px;
+    }
+}
+
+@media screen and (max-width: 448px) {
+    Div.img img {
+        max-width: 437px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    Div.img img {
+        max-width: 310px;
+    }
+}
+
+/*--------------------------Standard Table Declaration------------------------*/
+
+table.table,
+table.recomm-table {
+	width: calc(100% - 20px);
+	table-layout: fixed;
+	border-collapse: collapse;
+	margin-top: var(--standard-padding);
+	margin-right: 10px;
+	margin-left: 10px;
+	margin-bottom: var(--standard-padding);
+	font-size: var(--body-font-size);
+	border: 1px solid rgb(182, 181, 181);
+	line-height: calc(var(--body-line-height) * 0.9);
+}
+
+table.table+table.table {
+	margin-top: 15px;
+}
+
+table.recomm-table+table.recomm-table {
+	margin-top: 15px;
+}
+
+th,
+td {
+	padding: 8px 8px 0px 8px
+}
+
+td>p,
+th>p {
+	padding: 0px 0px var(--standard-padding) 0px;
+}
+
+
+/*----------Standard Table Header Text declaration---------------*/
+
+th.table-header1 {
+	background-color:#5E79B9;
+}
+
+th.table-header2 {
+	background-color: #97adde;
+}
+
+th.table-header3 {
+	background-color: #758ec7;
+}
+
+th.table-header4 {
+	background-color:#97adde;
+}
+
+
+/*----------Standard Table Header Text declaration---------------*/
+
+p.table-title1 {
+	text-align: left;
+color:#ffffff;
+	font-family: 'roboto-bold';
+
+}
+
+p.table-title2 {
+	text-align: left;
+color:#000000;
+	font-family: 'roboto-bold';
+}
+
+p.table-title3 {
+	text-align: left;
+color:#000000;
+	font-family: 'roboto-bold';
+}
+
+/*---------Table columns and table rows border behavior----------*/
+
+tr:first-child {
+	border-bottom: 1px solid #999999;
+}
+
+tr+tr {
+	border-bottom: 1px solid #999999;
+}
+
+th+th,
+td+td {
+	border-left: 1px solid #999999;
+}
+
+td {
+	background: #ffffff;
+	vertical-align: top;
+	border-left: 1px solid #999999;
+}
+
+td.withoutborder {
+	border-bottom: hidden;
+}
+
+td.col-gray 
+           {
+           background-color: gray;
+          }
+/*-------------------Standard Table Text----------------------*/						
+
+p.table-text {
+	text-align: left;
+}
+
+p.fig-caption {
+	text-align: left;
+    font-family: 'Roboto-bold';
+}
+
+/*---------Bold Text black----------*/
+
+span.bold     
+						{
+						
+font-family: 'Roboto-bold';
+						}				
+
+/*---------Italic Text--------------*/
+
+span.italic     
+						{
+						font-style:italic;
+						}
+span.red     
+						{
+color:red;
+						
+						}
+
+				
+/*--------------Text/Number/Sign superscripted/subscripted--------------*/	
+
+span.text-sup {
+	vertical-align: super;
+	font-size: 0.7em;
+}
+
+span.text-sub {
+	vertical-align: sub;
+	font-size: 0.7em;
+}
+
+.text-sub,
+.text-sup {
+	font-size: 0.7em;
+	line-height: 100%;
+}
+div.box {
+background: #f5f5f5;
+border: 1px solid #FFF;
+padding: 2px 2px 0px 2px;
+margin: var(--standard-padding) 10px var(--standard-padding) 525px;
+border-radius: 1px;
+-moz-border-radius: 1px;
+-webkit-border-radius: 1px;
+box-shadow: 1px 2px 4px rgba(0, 0, 0, .4);
+float: right;
+min-width: 40%;
+max-width: 70%;
+flex-direction: column;
+align-items: center;
+}
